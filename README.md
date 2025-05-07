@@ -1,49 +1,32 @@
-# Gerenciador de Produtos - Java + JDBC + PostgreSQL
+## Gerenciador de Produtos - Java + JDBC + PostgreSQL
 
-## Descrição
+Sistema de gerenciamento de produtos com operações de **CRUD** (Create, Read, Update, Delete), desenvolvido em **Java 21** com **JDBC** e persistência em banco de dados **PostgreSQL**, executado em contêiner **Docker** via `docker-compose`.
 
-Este projeto é um **sistema de gerenciamento de produtos** desenvolvido em **Java**, utilizando **JDBC** para comunicação com o banco de dados **PostgreSQL**. Ele realiza operações de **CRUD** (Create, Read, Update, Delete) e é integrado com o Docker, facilitando a execução do banco de dados PostgreSQL em um contêiner isolado.
+### 🚀 Tecnologias Utilizadas
+- **Java 21** – versão moderna da linguagem, com novos recursos.
+- **JDBC** – API de acesso a banco de dados relacionais.
+- **PostgreSQL** – banco de dados robusto e confiável.
+- **Docker + Docker Compose** – para isolar e orquestrar o ambiente do banco de dados.
+- **Eclipse IDE** – ambiente de desenvolvimento utilizado.
 
-## Tecnologias Utilizadas
+### 🧱 Arquitetura do Projeto
+- **Entities** – representam os dados da aplicação (ex: `Produto`).
+- **Repositories** – fazem a ponte entre o código Java e o banco usando JDBC.
+- **Controllers** – lidam com entradas e saídas do usuário.
+- **Factories** – criam objetos reutilizáveis, como conexões com o banco.
 
-- **Java 21**: A versão mais recente da linguagem Java, aproveitando suas novas funcionalidades para tornar o código mais robusto e moderno.
-- **JDBC**: API Java para comunicação com bancos de dados relacionais, utilizada para realizar as operações de CRUD diretamente no banco de dados.
-- **PostgreSQL**: Banco de dados relacional robusto e altamente escalável, utilizado para persistir os dados dos produtos.
-- **Docker + Docker Compose**: Ferramentas para criar, executar e orquestrar contêineres. O PostgreSQL é executado em um contêiner Docker isolado.
-- **Eclipse IDE**: Ambiente de desenvolvimento integrado (IDE) utilizado para escrever e compilar o código (pode ser substituído por outras IDEs).
+### ✅ Funcionalidades
+- Cadastrar produto  
+- Listar produtos  
+- Atualizar produto  
+- Deletar produto  
 
-## Arquitetura do Projeto
+### 📦 Pré-Requisitos
+- Java JDK 21+  
+- Docker e Docker Compose  
+- Eclipse ou outra IDE Java  
 
-A aplicação é estruturada em camadas bem definidas, seguindo o princípio da **separação de responsabilidades**, o que melhora a manutenção e a escalabilidade do código:
-
-- **Entities**: Contêm os modelos de dados que representam as tabelas do banco. Exemplo: `Produto`.
-  
-- **Repositories**: São responsáveis pela lógica de acesso e manipulação de dados no banco. Eles interagem diretamente com o banco de dados utilizando JDBC. Exemplo: `ProdutoRepository`.
-  
-- **Controllers**: Camada que recebe as requisições e interage com o usuário. Responsável por processar entradas e retornar saídas (informações sobre os produtos cadastrados, por exemplo).
-  
-- **Factories**: Responsáveis pela criação e configuração de objetos. Por exemplo, uma `ConnectionFactory` gerencia a conexão com o banco de dados PostgreSQL, centralizando a criação da conexão.
-
-## Funcionalidades
-
-- **Cadastrar Produto**: Adiciona um novo produto ao banco de dados.
-- **Listar Produtos**: Exibe todos os produtos cadastrados no banco.
-- **Atualizar Produto**: Modifica as informações de um produto existente.
-- **Deletar Produto**: Remove um produto do banco de dados.
-
-## Pré-Requisitos
-
-Antes de executar o projeto, certifique-se de ter o seguinte instalado:
-
-- **Java JDK 21** ou superior
-- **Docker** e **Docker Compose**
-- **Eclipse IDE** (ou outra IDE de sua preferência)
-
-## Como Executar
-
-1. **Suba o banco de dados PostgreSQL com Docker Compose**:
-
-   Na raiz do projeto, execute o seguinte comando para iniciar o contêiner do PostgreSQL:
-
+### ▶️ Como Executar
+1. Suba o banco de dados PostgreSQL com Docker:
    ```bash
    docker-compose up -d
